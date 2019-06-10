@@ -6,9 +6,9 @@ class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>We have { this.props.friends.current.length } Rooms!</Text>
+        <Text>We have { this.props.rooms.current.length } Rooms!</Text>
         <Button
-          title="Add some friends"
+          title="Add some rooms"
           onPress={() =>
             this.props.navigation.navigate('Rooms')
           }
@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
 
 
 const mapStateToProps = (state) => {
-  const { friends } = state
-  return { friends }
+  const { rooms } = state
+  return { rooms }
 };
 
 export default connect(mapStateToProps)(Home);

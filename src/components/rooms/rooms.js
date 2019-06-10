@@ -10,7 +10,7 @@ class Rooms extends React.Component {
       <View style={styles.container}>
         <Text>Add Rooms here!</Text>
         {
-          this.props.friends.possible.map((room, index) => (
+          this.props.rooms.possible.map((room, index) => (
             <Button
               key={ room }
               title={ `Add ${ room }` }
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => {
-  const { friends } = state
-  return { friends }
+  const { rooms } = state
+  return { rooms }
 };
 const mapDispatchToProps = dispatch => (
   bindActionCreators({

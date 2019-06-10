@@ -41,5 +41,5 @@ const roomReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default combineReducers({
-    friends: roomReducer,
+    rooms: roomReducer,
 });
