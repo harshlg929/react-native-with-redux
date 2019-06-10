@@ -1,10 +1,10 @@
 import { createStackNavigator } from 'react-navigation';
 import Home from './../src/components/home/home';
-import Friends from './../src/components/friends/friends';
+import Rooms from './../src/components/rooms/rooms';
 
 const AppNavigator = createStackNavigator({
   Home: { screen: Home },
-  Friends: { screen: Friends},
+  Rooms: { screen: Rooms},
 });
 
 export default AppNavigator;

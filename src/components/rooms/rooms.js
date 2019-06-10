@@ -2,20 +2,20 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addFriend } from './../../actions/friendActions';
+import { addRoom } from './../../actions/roomActions';
 
-class Friends extends React.Component {
+class Rooms extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Add friends here!</Text>
+        <Text>Add Rooms here!</Text>
         {
-          this.props.friends.possible.map((friend, index) => (
+          this.props.friends.possible.map((room, index) => (
             <Button
-              key={ friend }
-              title={ `Add ${ friend }` }
+              key={ room }
+              title={ `Add ${ room }` }
               onPress={() =>
-                this.props.addFriend(index)
+                this.props.addRoom(index)
               }
             />
           )
@@ -47,8 +47,8 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
-    addFriend,
+    addRoom,
   }, dispatch)
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Friends);
+export default connect(mapStateToProps, mapDispatchToProps)(Rooms);

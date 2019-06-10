@@ -3,16 +3,20 @@ import { combineReducers } from 'redux';
 const INITIAL_STATE = {
     current: [],
     possible: [
-        'Allie',
-        'Gator',
-        'Lizzie',
-        'Reptar',
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
     ],
 };
 
-const friendReducer = (state = INITIAL_STATE, action) => {
+const roomReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'ADD_FRIEND':
+        case 'ADD_ROOM':
             // Pulls current and possible out of previous state
             // We do not want to alter state directly in case
             // another action is altering it at the same time
@@ -21,12 +25,12 @@ const friendReducer = (state = INITIAL_STATE, action) => {
                 possible,
             } = state;
 
-            // Pull friend out of friends.possible
-            // Note that action.payload === friendIndex
-            const addedFriend = possible.splice(action.payload, 1);
+            // Pull friend out of rooms.possible
+            // Note that action.payload === roomIndex
+            const addedRoom = possible.splice(action.payload, 1);
 
-            // And put friend in friends.current
-            current.push(addedFriend);
+            // And put friend in rooms.current
+            current.push(addedRoom);
 
             // Finally, update our redux state
             const newState = { current, possible };
@@ -37,5 +41,5 @@ const friendReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default combineReducers({
-    friends: friendReducer,
+    friends: roomReducer,
 });

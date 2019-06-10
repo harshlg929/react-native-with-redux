@@ -6,11 +6,11 @@ class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>We have { this.props.friends.current.length } friends!</Text>
+        <Text>We have { this.props.friends.current.length } Rooms!</Text>
         <Button
           title="Add some friends"
           onPress={() =>
-            this.props.navigation.navigate('Friends')
+            this.props.navigation.navigate('Rooms')
           }
         />
       </View>
